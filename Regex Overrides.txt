@@ -1,0 +1,52 @@
+Authentication Method (Custom):
+Expression Type: Regex
+Expression: user\s'\w+'\sauthenticated\susing\s'(.*?)'
+Format String: $1
+
+Event Category:
+Expression Type: Regex
+Expression: (openvpn)(\:\s|\[\d+\]\:\s)
+Format String: $1
+
+Event ID:
+Expression Type: Regex
+Expression: openvpn\[\d+\]\:\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s\[\w+\]|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\w+\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s(WARNING:\s\w+\s\w+\s\w+|\S+\s\w+\s\w+|\S+\s\w+|)
+Format String: $2
+
+Expression Type: Regex
+Expression: (openvpn|openvpn\[\d+\])\:\s(|\S+\s'\w+'\s)(authenticated|requires\s\w+\s\w+\s\w+\w+\s\w+|\w+\s\w+\s\w+)
+Format String: $3
+
+Log Source Time:
+Expression Type: Regex
+Expression: (\w+)\s+(\d+)\s+([\d:]+)\s
+Format String: 2018-$1-$2 $3
+Date Format: yyyy-MMM-dd hh:mm:ss
+
+Peer Info (Custom):
+Expression Type: Regex
+Expression: peer\sinfo\:\s(\S+)
+Format String: $1
+
+Source IP:
+Expression Type: Regex
+Expression: [\s|\/|\:](\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s|\/|\:]
+Format String: $1
+
+Source Port:
+Expression Type: Regex
+Expression: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:(\d+)
+Capture Group: 1
+
+User:
+Expression Type: Regex
+Expression: openvpn\[\d+\]\:\s(\w+)\/
+Format String: $1
+
+Expression Type: Regex
+Expression: openvpn\:\suser\s'(\w+)'
+Format String: $1
+
+Expression Type: Regex
+Expression: openvpn\[\d+\]\:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s\[(\w+)\]
+Format String: $1

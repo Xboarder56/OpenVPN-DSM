@@ -1,0 +1,79 @@
+Event ID: WARNING: Failed running command
+Category: openvpn
+Name: VPN Generic Authentication Failure
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed running an authentication command.
+
+Event ID: TLS Auth Error
+Category: openvpn
+Name: VPN TLS Authentication Failure
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to successfully authenticate the user.
+
+Event ID: requires the local group VPN
+Category: openvpn
+Name: VPN User Authentication Failure
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to successfully authenticate the user due to an incorrect username or the user not having VPN permissions.
+
+Event ID: could not authenticate
+Category: openvpn
+Name: VPN Password Authentication Failure
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to successfully authenticate the user due to the incorrect password/token.
+
+Event ID: Peer Connection Initiated
+Category: openvpn
+Name: Attempting to Send VPN Connection Settings
+High Level Category: Application
+Low Level Category: VPN Queued
+Severity: 3
+Description: VPN settings attempting to be provided to the VPN server prior to VPN authentication.
+
+Event ID: authenticated
+Category: openvpn
+Name: Successful VPN Authentication
+High Level Category: Application
+Low Level Category: VPN In Progress
+Severity: 1
+Description: A VPN connection was been successfully authenticated and an active session is now in progress.
+
+Event ID: peer info
+Category: openvpn
+Name: Receiving VPN Connection Settings
+High Level Category: Application
+Low Level Category: VPN Queued
+Severity: 3
+Description: VPN settings are being provided to the VPN server prior to VPN authentication.
+
+Event ID: TCP connection established
+Category: openvpn
+Name: VPN Connection Opened
+High Level Category: Application
+Low Level Category: VPN Opened
+Severity: 1
+Description: A connection has been established to the VPN server. This happens prior to VPN authentication.
+
+Event ID: Connection reset
+Category: openvpn
+Name: VPN Connection Reset
+High Level Category: Application
+Low Level Category: VPN Reset
+Severity: 3
+Description: The VPN connection was reset.
+
+Event ID: WARNING: Bad encapsulated packet
+Category: openvpn
+Name: Bad Encapsulated Packet
+High Level Category: Application
+Low Level Category: VPN Terminated
+Severity: 4
+Description: This possibly indicates an attempted VPN attack.
