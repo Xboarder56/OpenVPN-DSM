@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:device-extension xmlns:ns2="event_parsing/device_extension">
+    <pattern type="JavaPattern" id="DestinationIp-Pattern-1">IPv4=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})</pattern>
     <pattern type="JavaPattern" id="EventCategory-Pattern-1">(openvpn)(\:\s|\[\d+\]\:\s)</pattern>
     <pattern type="JavaPattern" id="EventName-Pattern-1">openvpn\[\d+\]\:\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s\[\w+\]|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\w+\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s(WARNING:\s\w+\s\w+\s\w+|\S+\s\w+\s\w+|\S+\s\w+|)</pattern>
-    <pattern type="JavaPattern" id="EventName-Pattern-2">(openvpn|openvpn\[\d+\])\:\s(|\S+\s'\w+'\s)(authenticated|requires\s\w+\s\w+\s\w+\w+\s\w+|\w+\s\w+\s\w+)</pattern>
+    <pattern type="JavaPattern" id="EventName-Pattern-2">(openvpn|openvpn\[\d+\])\:\s(|\S+\s'\w+'\s)(authenticated|Could\snot\sdetermine\s\S+\s\w+|\w+\s\w+\w+\s\w+\s(?:TCP|UDP)\s\w+|requires\s\w+\s\w+\s\w+\w+\s\w+|\w+\s\w+\s\w+)</pattern>
     <pattern type="JavaPattern" id="DeviceTime-Pattern-1">(\w+)\s+(\d+)\s+([\d:]+)\s</pattern>
     <pattern type="JavaPattern" id="SourceIp-Pattern-1">[\s|\/|\:](\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s|\/|\:]</pattern>
     <pattern type="JavaPattern" id="SourcePort-Pattern-1">\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:(\d+)</pattern>
@@ -11,6 +12,7 @@
     <pattern type="JavaPattern" id="UserName-Pattern-3">openvpn\[\d+\]\:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s\[(\w+)\]</pattern>
     <pattern type="JavaPattern" id="AllEvents">(.*?)</pattern>
     <match-group device-type-id-override="4003" order="1">
+        <matcher order="1" enable-substitutions="true" capture-group="\1" pattern-id="DestinationIp-Pattern-1" field="DestinationIp"/>
         <matcher order="1" enable-substitutions="true" capture-group="\1" pattern-id="EventCategory-Pattern-1" field="EventCategory"/>
         <matcher order="1" enable-substitutions="true" capture-group="\2" pattern-id="EventName-Pattern-1" field="EventName"/>
         <matcher order="2" enable-substitutions="true" capture-group="\3" pattern-id="EventName-Pattern-2" field="EventName"/>

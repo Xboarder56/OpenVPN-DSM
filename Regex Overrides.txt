@@ -3,6 +3,11 @@ Expression Type: Regex
 Expression: user\s'\w+'\sauthenticated\susing\s'(.*?)'
 Format String: $1
 
+Destination IP:
+Expression Type: Regex
+Expression: IPv4=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})
+Format String $1
+
 Event Category:
 Expression Type: Regex
 Expression: (openvpn)(\:\s|\[\d+\]\:\s)
@@ -14,7 +19,7 @@ Expression: openvpn\[\d+\]\:\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s\[\w+\]|\d{1,
 Format String: $2
 
 Expression Type: Regex
-Expression: (openvpn|openvpn\[\d+\])\:\s(|\S+\s'\w+'\s)(authenticated|requires\s\w+\s\w+\s\w+\w+\s\w+|\w+\s\w+\s\w+)
+Expression: (openvpn|openvpn\[\d+\])\:\s(|\S+\s'\w+'\s)(authenticated|Could\snot\sdetermine\s\S+\s\w+|\w+\s\w+\w+\s\w+\s(?:TCP|UDP)\s\w+|requires\s\w+\s\w+\s\w+\w+\s\w+|\w+\s\w+\s\w+)
 Format String: $3
 
 Log Source Time:
@@ -29,6 +34,10 @@ Expression: peer\sinfo\:\s(\S+)
 Format String: $1
 
 Source IP:
+Expression Type: Regex
+Expression: [\s|\/|\:](\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s|\/|\:]
+Format String: $1
+
 Expression Type: Regex
 Expression: [\s|\/|\:](\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s|\/|\:]
 Format String: $1

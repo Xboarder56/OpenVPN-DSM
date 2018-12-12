@@ -1,3 +1,51 @@
+Event ID: Initialization Sequence Completed
+Category: openvpn
+Name: VPN Service Started Successfully
+High Level Category: Application
+Low Level Category: VPN Opened
+Severity: 1
+Description: The VPN server has completed the initialization sequence. This indicates that the server is up and running and actively ready for incoming connections.
+
+Event ID: Could not determine IPv4/IPv6 protocol
+Category: openvpn
+Name: VPN Server Unknown Protocol Type
+High Level Category: Application
+Low Level Category: VPN Queued
+Severity: 3
+Description: The VPN server is unable to determine the protocol type (IPv4/IPv6). This is normal upon the VPN startup process.
+
+Event ID: Listening for incoming UDP connection
+Category: openvpn
+Name: VPN Listening for Incoming UDP Connections
+High Level Category: Application
+Low Level Category: VPN Opened
+Severity: 1
+Description: The VPN server has successfully started up and is currently listening for incoming UDP connections.
+
+Event ID: Listening for incoming TCP connection
+Category: openvpn
+Name: VPN Listening for Incoming TCP Connections
+High Level Category: Application
+Low Level Category: VPN Opened
+Severity: 1
+Description: The VPN server has successfully started up and is currently listening for incoming TCP connections.
+
+Event ID: MULTI_sva: pool returned
+Category: openvpn
+Name: VPN Internal Address Assigned
+High Level Category: Application
+Low Level Category: VPN In Progress
+Severity: 1
+Description: The VPN server has assigned an IP address from the internal VPN address pool.
+
+Event ID: TCPv6_SERVER link local
+Category: openvpn
+Name: IPv6 VPN Server Started
+High Level Category: Application
+Low Level Category: VPN Opened
+Severity: 1
+Description: The service for IPv6 VPN server has started. This will happen typically during a server reboot or on startup.
+
 Event ID: WARNING: Failed running command
 Category: openvpn
 Name: VPN Generic Authentication Failure
