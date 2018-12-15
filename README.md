@@ -20,6 +20,6 @@ NOTE: Without this setting some events might not be mapped or parsed correctly. 
 9. Finally, you will need to create a new log source selecting the custom Log source type we just created.
 
 # Change Log
-12-12-2018 - Added additional events for when the VPN service is restarted and when IP addresses are assigned. Additional regex logic was created for the destination IP field for when the server assigns a new IP address to the client. The regex logic for event ID was adjusted to account for the additional events.
-
-12-11-2018 - Initial Upload of the source code.
+- 12-15-2018 - Mapped additional events.
+- 12-12-2018 - Added additional events for when the VPN service is restarted and when IP addresses are assigned. Additional regex logic was created for the destination IP field for when the server assigns a new IP address to the client. The regex logic for event ID was adjusted to account for the additional events.
+- 12-11-2018 - Initial Upload of the source code.

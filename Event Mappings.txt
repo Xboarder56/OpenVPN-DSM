@@ -62,6 +62,22 @@ Low Level Category: VPN Denied
 Severity: 4
 Description: The VPN server failed to successfully authenticate the user.
 
+Event ID: TLS Error
+Category: openvpn
+Name: VPN TLS Error
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed due to a TLS error.
+
+Event ID: Fatal TLS error
+Category: openvpn
+Name: VPN Fatal TLS error
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed a TLS check when attempting establishing a connection.
+
 Event ID: requires the local group VPN
 Category: openvpn
 Name: VPN User Authentication Failure
