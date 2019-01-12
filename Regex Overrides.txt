@@ -15,17 +15,13 @@ Format String: $1
 
 Event ID:
 Expression Type: Regex
-Expression: openvpn\[\d+\]\:\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s\[\w+\]|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\w+\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s(WARNING:\s\w+\s\w+\s\w+|\S+\s\w+\s\w+|\S+\s\w+|)
-Format String: $2
-
-Expression Type: Regex
-Expression: (openvpn|openvpn\[\d+\])\:\s(|\S+\s'\w+'\s)(authenticated|Could\snot\sdetermine\s\S+\s\w+|\w+\s\w+\w+\s\w+\s(?:TCP|UDP)\s\w+|requires\s\w+\s\w+\s\w+\w+\s\w+|\w+\s\w+\s\w+)
-Format String: $3
+Expression: (?:openvpn|openvpn\[\d+\])\:\s(?:(?:\w+\/|)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?:\s\[.*?\]|\sread|)\s|\S+\s'\w+'\s|)(.*?)(?:\s\(|\s\w+\s\[|\s\w+\s\'.*?\'|\,|\.\s|$|(?:|\:)\s\w+=|\.$)
+Format String: $1
 
 Log Source Time:
 Expression Type: Regex
 Expression: (\w+)\s+(\d+)\s+([\d:]+)\s
-Format String: 2018-$1-$2 $3
+Format String: 2019-$1-$2 $3
 Date Format: yyyy-MMM-dd hh:mm:ss
 
 Peer Info (Custom):

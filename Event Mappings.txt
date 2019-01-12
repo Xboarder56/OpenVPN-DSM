@@ -41,10 +41,26 @@ Description: The VPN server has assigned an IP address from the internal VPN add
 Event ID: TCPv6_SERVER link local
 Category: openvpn
 Name: IPv6 VPN Server Started
-High Level Category: Application
-Low Level Category: VPN Opened
+High Level Category: System
+Low Level Category: Service Started
 Severity: 1
 Description: The service for IPv6 VPN server has started. This will happen typically during a server reboot or on startup.
+
+Event ID: TCPv6_SERVER: Operation Timed Out
+Category: openvpn
+Name: IPv6 VPN timed out
+High Level Category: System
+Low Level Category: Service Failure
+Severity: 1
+Description: The service for IPv6 VPN server has timed out.
+
+Event ID: Inactivity timeout
+Category: openvpn
+Name: VPN Inactivity Timeout
+High Level Category: Application
+Low Level Category: VPN Closed
+Severity: 3
+Description: The VPN connection has timed out due to inactivity of the client.
 
 Event ID: WARNING: Failed running command
 Category: openvpn
@@ -54,7 +70,7 @@ Low Level Category: VPN Denied
 Severity: 4
 Description: The VPN server failed running an authentication command.
 
-Event ID: TLS Auth Error
+Event ID: TLS Auth Error: Auth Username/Password verification failed for peer
 Category: openvpn
 Name: VPN TLS Authentication Failure
 High Level Category: Application
@@ -62,13 +78,53 @@ Low Level Category: VPN Denied
 Severity: 4
 Description: The VPN server failed to successfully authenticate the user.
 
-Event ID: TLS Error
+Event ID: TLS Error: TLS key negotiation failed to occur within 60 seconds
 Category: openvpn
-Name: VPN TLS Error
+Name: VPN TLS Key Negotiation Failed
 High Level Category: Application
 Low Level Category: VPN Denied
 Severity: 4
-Description: The VPN server failed due to a TLS error.
+Description: The VPN server failed due to a TLS key negotiation not occurring within 60 seconds.
+
+Event ID: TLS Error: TLS key negotiation failed to occur within 60 seconds
+Category: openvpn
+Name: VPN TLS Key Negotiation Failed
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed due to a TLS key negotiation not occurring within 60 seconds.
+
+Event ID: TLS Error: Auth Username/Password was not provided by peer
+Category: openvpn
+Name: VPN No Username or Password Specified
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed due no username and/or password being specified while attempting to establish the connection.
+
+Event ID: TLS Error: TLS handshake failed
+Category: openvpn
+Name: VPN Failed the TLS Handshake
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed the TLS key handshake process.
+
+Event ID: TLS Error: incoming packet authentication failed
+Category: openvpn
+Name: VPN Failed Packet Authentication
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to authenticate the incoming packet.
+
+Event ID: TLS Error: cannot locate HMAC in incoming packet
+Category: openvpn
+Name: VPN Failed to Find HMAC in Packet
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to find the HMAC in the incoming packet.
 
 Event ID: Fatal TLS error
 Category: openvpn
@@ -77,6 +133,22 @@ High Level Category: Application
 Low Level Category: VPN Denied
 Severity: 4
 Description: The VPN server failed a TLS check when attempting establishing a connection.
+
+Event ID: Authenticate/Decrypt packet error: packet HMAC authentication failed
+Category: openvpn
+Name: VPN Packet Authentication/Decrypt Error
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to authenticate/decrypt the incoming packet.
+
+Event ID: Authenticate/Decrypt packet error: bad packet ID
+Category: openvpn
+Name: Bad VPN Packet ID
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to authenticate/decrypt the incoming packet due to a bad packet ID.
 
 Event ID: requires the local group VPN
 Category: openvpn
@@ -134,10 +206,18 @@ Low Level Category: VPN Reset
 Severity: 3
 Description: The VPN connection was reset.
 
-Event ID: WARNING: Bad encapsulated packet
+Event ID: WARNING: Bad encapsulated packet length from peer
 Category: openvpn
-Name: Bad Encapsulated Packet
+Name: VPN Bad Encapsulated Packet
 High Level Category: Application
 Low Level Category: VPN Terminated
 Severity: 4
-Description: This possibly indicates an attempted VPN attack.
+Description: This possibly indicates an attempted VPN attack or a possible configuration issue with the endpoint.
+
+Event ID: LDAP bind error
+Category: openvpn
+Name: LDAP Bind Error
+High Level Category: System
+Low Level Category: System Informational
+Severity: 3
+Description: The LDAP service failed to bind correctly. This could possibly be due to incorrect/invalid bind credentials.
