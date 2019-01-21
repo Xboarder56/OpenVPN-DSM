@@ -134,6 +134,14 @@ Low Level Category: VPN Denied
 Severity: 4
 Description: The VPN server failed a TLS check when attempting establishing a connection.
 
+Event ID: TLS Error: unknown opcode received
+Category: openvpn
+Name: VPN Unknown Packet Received
+High Level Category: Application
+Low Level Category: VPN Denied
+Severity: 4
+Description: The VPN server failed to establish a connection due to a none VPN type packet being received. This is usually an indication the port is being probed.
+
 Event ID: Authenticate/Decrypt packet error: packet HMAC authentication failed
 Category: openvpn
 Name: VPN Packet Authentication/Decrypt Error
