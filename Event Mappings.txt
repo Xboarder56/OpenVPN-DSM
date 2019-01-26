@@ -73,9 +73,9 @@ Description: The VPN server failed running an authentication command.
 Event ID: TLS Auth Error: Auth Username/Password verification failed for peer
 Category: openvpn
 Name: VPN TLS Authentication Failure
-High Level Category: Application
-Low Level Category: VPN Denied
-Severity: 4
+High Level Category: Authentication
+Low Level Category: User Login Failure
+Severity: 3
 Description: The VPN server failed to successfully authenticate the user.
 
 Event ID: TLS Error: TLS key negotiation failed to occur within 60 seconds
@@ -169,9 +169,9 @@ Description: The VPN server failed to successfully authenticate the user due to 
 Event ID: could not authenticate
 Category: openvpn
 Name: VPN Password Authentication Failure
-High Level Category: Application
-Low Level Category: VPN Denied
-Severity: 4
+High Level Category: Authentication
+Low Level Category: User Login Failure
+Severity: 3
 Description: The VPN server failed to successfully authenticate the user due to the incorrect password/token.
 
 Event ID: Peer Connection Initiated
@@ -185,8 +185,8 @@ Description: VPN settings attempting to be provided to the VPN server prior to V
 Event ID: authenticated
 Category: openvpn
 Name: Successful VPN Authentication
-High Level Category: Application
-Low Level Category: VPN In Progress
+High Level Category: Authentication
+Low Level Category: User Login Success
 Severity: 1
 Description: A VPN connection was been successfully authenticated and an active session is now in progress.
 
@@ -224,8 +224,8 @@ Description: This possibly indicates an attempted VPN attack or a possible confi
 
 Event ID: LDAP bind error
 Category: openvpn
-Name: LDAP Bind Error
-High Level Category: System
-Low Level Category: System Informational
+Name: LDAP Authentication Error
+High Level Category: Authentication
+Low Level Category: User Login Failure
 Severity: 3
-Description: The LDAP service failed to bind correctly. This could possibly be due to incorrect/invalid bind credentials.
+Description: The LDAP service failed to bind correctly. This could possibly be due to incorrect/invalid credentials.

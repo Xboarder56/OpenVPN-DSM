@@ -20,6 +20,7 @@ NOTE: Without this setting some events might not be mapped or parsed correctly. 
 9. Finally, you will need to create a new log source selecting the custom Log source type we just created.
 
 # Change Log
+- 01-25-2019 - Changed the mapping of 4 Authentication events to a subcategory of User Login Failure/Success. This was done to make it easier for creating authentication failure rules.
 - 01-21-2019 - Mapped an additional unknown event related to port probing the OpenVPN causing an invalid connection.
 - 01-11-2019 - Changed the regex for Event ID to support additional events. Remapped additional events discovered and fixed issues with existing events to provide better fidelity.
 - 12-15-2018 - Mapped additional events.
