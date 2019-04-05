@@ -20,6 +20,7 @@ NOTE: Without this setting some events might not be mapped or parsed correctly. 
 9. Finally, you will need to create a new log source selecting the custom Log source type we just created.
 
 # Change Log
+- 04-05-2019 - Discovered slight bug with parsing certain events. Tweaked eventID again for missing port label when username is present.
 - 04-05-2019 - Tweaked EventID parsing as the latest OPNSense released included the port number with IP address. This should both be forwards and backwards compatible with OPNsense 19/18.
 - 01-25-2019 - Changed the mapping of 4 Authentication events to a subcategory of User Login Failure/Success. This was done to make it easier for creating authentication failure rules.
 - 01-21-2019 - Mapped an additional unknown event related to port probing the OpenVPN causing an invalid connection.

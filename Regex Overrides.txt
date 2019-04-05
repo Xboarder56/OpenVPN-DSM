@@ -15,7 +15,7 @@ Format String: $1
 
 Event ID:
 Expression Type: Regex
-Expression: (?:openvpn|openvpn\[\d+\])\:\s(?:(?:\w+\/|)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?:\s\[.*?\]|\sread|)\s|\S+\s'\w+'\s|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:\d+\s|)(.*?)(?:\s\(|\s\w+\s\[|\s\w+\s\'.*?\'|\,|\.\s|$|(?:|\:)\s\w+=|\.$)
+Expression: (?:openvpn|openvpn\[\d+\])\:\s(?:(?:\w+\/|)(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:\d+)(?:\s\[.*?\]|\sread|)\s|\S+\s'\w+'\s|)(.*?)(?:\s\(|\s\w+\s\[|\s\w+\s\'.*?\'|\,|\.\s|$|(?:|\:)\s\w+=|\.$)
 Format String: $1
 
 Log Source Time:
